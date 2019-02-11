@@ -48,8 +48,8 @@ const transporter = nodemailer.createTransport({
 	service: 'gmail',
 	port: 587,
 	auth: {
-		user: 'cointwister3@gmail.com',
-		pass: 'cointwister123'
+		user: 'yourmail@gmail.com',
+		pass: 'yourpassword'
 	}
 });
 
@@ -141,7 +141,7 @@ app.get('/api/getPrediction', (req, res) => {
 		console.log(Month);
 		console.log(todaysDate);
 		var date = `${today.getFullYear()}-${Month}-${todaysDate}`;
-		var pastYear = `${today.getFullYear()-1}-02-01`;
+		var pastYear = `${today.getFullYear()-1}-03-01`;
 		// var month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 		axios.get(`${chartsApiUrl}?start=${pastYear}&end=${date}`).then(result => {
 			var properties = Object.getOwnPropertyNames(result.data.bpi);
